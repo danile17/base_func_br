@@ -12,3 +12,13 @@ String.prototype.format = function() {
   let i = 0, args = arguments;
   return this.replace(/{}/g, _ => { return typeof args[i] != 'undefined' ? args[i++] : ''; });
 };
+
+let equals = (s, s1) => {
+  if (s.length == s1.length) {
+    for (let i = 0; i < s.length; s++) {
+      if (s.charCodeAt(i) != s1.charCodeAt(i)) return false;
+    }
+    return true;
+  }
+  return false;
+}
